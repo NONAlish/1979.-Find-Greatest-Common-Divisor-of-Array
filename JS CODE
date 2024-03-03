@@ -1,0 +1,16 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findGCD = function(nums) {
+    let sortNum = nums.slice().sort((a, b) => a - b)
+    smallest = sortNum[0]
+    biggest = sortNum[sortNum.length-1]
+
+    while (biggest!== 0) {
+        let temp = biggest;
+        biggest = smallest % biggest
+        smallest = temp
+    }
+    return smallest
+};
